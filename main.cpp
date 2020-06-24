@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <iostream>
+ï»¿#include <iostream>
 #include <Windows.h>
 #include <conio.h>
 using namespace std;
@@ -29,7 +28,7 @@ bool isRunning = true;
 int main()
 {
 	char input;
-	CursorView(0);	// Ä¿¼­ ¼û±â±â
+	CursorView(0);
 	PrintMap();
 	while (isRunning) {
 		fflush(stdin);
@@ -37,30 +36,28 @@ int main()
 		if (input == -32) {
 			input = _getch();
 			int arrow = oldArrow = whereArrow;
-			
+
 			switch (input)
 			{
 			case LEFT:
-				if (arrow > 0 && arrow % 2 == 0)
-					arrow -= 2;
+				if (arrow < 3)
+					arrow += 1;
 				break;
 			case RIGHT:
-				if (arrow < 6 && arrow % 2 == 0)
-					arrow += 2;
-				else if (arrow % 2 == 1)
+				if (arrow <= 3 && arrow > 0)
+					arrow -= 1;
+				else if (arrow > 3)
 					arrow = 2;
 				break;
 			case DOWN:
-				if (arrow < 5 && arrow % 2 == 1)
-					arrow += 2;
-				else if (arrow % 2 == 0)
-					arrow = 1;
+				if (arrow < 6 && arrow >= 3)
+					arrow += 1;
+				else if (arrow < 3)
+					arrow = 4;
 				break;
 			case UP:
-				if (arrow > 1 && arrow % 2 == 1)
-					arrow -= 2;
-				else if (arrow == 1)
-					arrow = 0;
+				if (arrow > 3)
+					arrow -= 1;
 				break;
 			}
 			whereArrow = arrow;
@@ -68,7 +65,7 @@ int main()
 		}
 		//PrintMap();
 	}
-	
+
 }
 
 void PrintMap() {
@@ -78,28 +75,28 @@ void PrintMap() {
 		for (int j = 0; j < MAP_SIZE; j++) {
 			gotoxy(j * 3 + 1, i * 2 + 1);
 			if (map[i][j] == 0)
-				printf("¡Û");
+				printf("â—‹");
 			else if (map[i][j] == 1)
-				printf("¡Ü");
+				printf("â—");
 		}
 	}
 }
 
 void PrintArrow() {
-// 0  2  4  6
-// 1
-// 3
-// 5
+	// 3  2  1  0
+	// 4
+	// 5
+	// 6
 	ArrowCursorPos(oldArrow);
 	printf("  ");
 
 	ArrowCursorPos(whereArrow);
-	if (whereArrow == 0)
-		printf("¢Ù");
-	else if (whereArrow % 2 == 0)
-		printf("¡é");
+	if (whereArrow == 3)
+		printf("â†˜");
+	else if (whereArrow < 3)
+		printf("â†“");
 	else
-		printf("¡æ");
+		printf("â†’");
 	gotoxy(10, 5);
 	printf("%d", whereArrow);
 }
@@ -108,19 +105,19 @@ void ArrowCursorPos(int num) {
 	switch (num)
 	{
 	case 0:
-		gotoxy(0, 0); break;
+		gotoxy(7, 0); break;
 	case 1:
-		gotoxy(0, 1); break;
+		gotoxy(4, 0); break;
 	case 2:
 		gotoxy(1, 0); break;
 	case 3:
-		gotoxy(0, 3); break;
+		gotoxy(0, 0); break;
 	case 4:
-		gotoxy(4, 0); break;
+		gotoxy(0, 1); break;
 	case 5:
-		gotoxy(0, 5); break;
+		gotoxy(0, 3); break;
 	case 6:
-		gotoxy(7, 0); break;
+		gotoxy(0, 5); break;
 	}
 }
 
