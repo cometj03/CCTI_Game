@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿#include <stdio.h>
+#include <iostream>
 #include <Windows.h>
 #include <conio.h>
 using namespace std;
@@ -18,6 +19,8 @@ int map[MAP_SIZE + 1][MAP_SIZE + 1] =
 
 void PrintMap();
 void PrintArrow();
+void Switch_One(int i);
+void Switch_Color(int arrow);
 void ArrowCursorPos(int num);
 void gotoxy(int x, int y);
 void CursorView(char show);
@@ -50,22 +53,71 @@ int main()
 					arrow = 2;
 				break;
 			case DOWN:
-				if (arrow < 6 && arrow >= 3)
+				if (arrow < 7 && arrow >= 3)
 					arrow += 1;
 				else if (arrow < 3)
 					arrow = 4;
 				break;
 			case UP:
+				// TODO
 				if (arrow > 3)
 					arrow -= 1;
 				break;
 			}
+
 			whereArrow = arrow;
 			PrintArrow();
-		}
-		//PrintMap();
-	}
 
+		}
+		else if (input == 'q' || input == 'Q' || input == 32) {
+			Switch_Color(whereArrow);
+		}
+		else if (input >= 49 && input <= 57) {		//change
+			Switch_One(input-49);
+		}
+	}
+}
+
+void Switch_One(int i){
+	if (map[i / 3][i % 3] == 0)	//map[(i-1)/3][(i-1)%3]
+		map[i / 3][i % 3] = 1;
+	else
+		map[i / 3][i % 3] = 0;
+	PrintMap();
+}
+
+void Switch_Color(int arrow) {
+	switch (arrow)
+	{
+	case 0: case 1 :case 2:
+		for (int i = 0; i < 3; i++) {
+			int tmp = map[i][MAP_SIZE - arrow - 1];
+			tmp = tmp == 1 ? 0 : 1;
+			map[i][MAP_SIZE - arrow - 1] = tmp;
+		}
+		break;
+	case 3:
+		for (int i = 0; i < 3; i++) {
+			int tmp = map[i][i];
+			tmp = tmp == 1 ? 0 : 1;
+			map[i][i] = tmp;
+		}
+		break;
+	case 4: case 5: case 6:
+		for (int i = 0; i < 3; i++) {
+			int tmp = map[arrow - MAP_SIZE - 1][i];
+			tmp = tmp == 1 ? 0 : 1;
+			map[arrow - MAP_SIZE - 1][i] = tmp;
+		}
+		break;
+	case 7:
+		for (int i = 0; i < 3; i++) {
+			int tmp = map[i][MAP_SIZE - i - 1];
+			tmp = tmp == 1 ? 0 : 1;
+			map[i][MAP_SIZE - i - 1] = tmp;
+		}
+	}
+	PrintMap();
 }
 
 void PrintMap() {
@@ -87,12 +139,15 @@ void PrintArrow() {
 	// 4
 	// 5
 	// 6
+	// 7
 	ArrowCursorPos(oldArrow);
 	printf("  ");
 
 	ArrowCursorPos(whereArrow);
 	if (whereArrow == 3)
 		printf("↘");
+	else if (whereArrow == 7)
+		printf("↗");
 	else if (whereArrow < 3)
 		printf("↓");
 	else
@@ -118,6 +173,8 @@ void ArrowCursorPos(int num) {
 		gotoxy(0, 3); break;
 	case 6:
 		gotoxy(0, 5); break;
+	case 7:
+		gotoxy(0, 6); break;
 	}
 }
 
