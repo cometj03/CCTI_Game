@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <iostream>
 #include <Windows.h>
 #include <conio.h>
@@ -27,7 +26,7 @@ void CursorView(char show);
 
 int whereArrow = 4, oldArrow;
 bool isRunning = true;
-bool chance = true;//Ä¡Æ® »ç¿ë Á¦ÇÑ //todo
+bool chance = true;//ì¹˜íŠ¸ ì‚¬ìš© ì œí•œ //todo
 
 int main()
 {
@@ -128,9 +127,9 @@ void PrintMap() {
 		for (int j = 0; j < MAP_SIZE; j++) {
 			gotoxy(j * 3 + 1, i * 2 + 1);
 			if (map[i][j] == 0)
-				printf("¡Û");
+				printf("â—‹");
 			else if (map[i][j] == 1)
-				printf("¡Ü");
+				printf("â—");
 		}
 	}
 }
@@ -146,13 +145,13 @@ void PrintArrow() {
 
 	ArrowCursorPos(whereArrow);
 	if (whereArrow == 3)
-		printf("¢Ù");
+		printf("â†˜");
 	else if (whereArrow == 8)
-		printf("¢Ö");
+		printf("â†—");
 	else if (whereArrow < 3)
-		printf("¡é");
+		printf("â†“");
 	else
-		printf("¡æ");
+		printf("â†’");
 	gotoxy(15, 5);
 	printf("%d", whereArrow);
 }
