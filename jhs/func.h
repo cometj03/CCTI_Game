@@ -16,7 +16,7 @@ void CursorView(char show);
 void PrintMap(int(&map)[MAP_SIZE + 1][MAP_SIZE + 1]);
 void PrintArrow(int arrow_pos, int old_pos);
 
-void Switch_One(int i);
-void Switch_Color(int arrow);
+void Switch_One(int(&map)[MAP_SIZE + 1][MAP_SIZE + 1], int i);
+void Switch_Color(int(&map)[MAP_SIZE + 1][MAP_SIZE + 1], int arrow);
 
 void ArrowCursorPos(int num);

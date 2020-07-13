@@ -1,5 +1,12 @@
 #include "func.h"
 
+/*
+
+일정 턴이 지나면 정해진 곳의 색 바꾸기
+변수:일정 턴, 색이 바뀔곳
+
+*/
+
 // 3  2  1  0
 // 4
 // 5
@@ -13,7 +20,7 @@ int map[MAP_SIZE + 1][MAP_SIZE + 1] =
 	{ 0, 0, 0 }
 };
 
-int whereArrow = 3, oldArrow;
+int whereArrow = 3, oldArrow, cnt = 0;
 bool isRunning = true;
 
 int main()
@@ -56,54 +63,18 @@ int main()
 			PrintArrow(whereArrow, oldArrow);
 
 		}
-		else if (input == 'q' || input == 'Q' || input == SPACE) {
-			Switch_Color(whereArrow);
+		else if (input == 'q' || input == 'Q' || input == SPACE) {	// space bar
+			Switch_Color(map, whereArrow);
+			cnt++;
 		}
 		else if (input >= 49 && input <= 57) {		//change
-			Switch_One(input - 49);
+			Switch_One(map, input - 49);
+			cnt += 100;
+		}
+		else if (input == 'x' || input == 'X') {
+			printf("%d", cnt);
+			isRunning = false;
 		}
 	}
+	
 }
-
-void Switch_One(int i){
-	if (map[i / MAP_SIZE][i % MAP_SIZE] == 0)	//map[(i-1)/MAP_SIZE][(i-1)%MAP_SIZE]
-		map[i / MAP_SIZE][i % MAP_SIZE] = 1;
-	else
-		map[i / MAP_SIZE][i % MAP_SIZE] = 0;
-	PrintMap(map);
-}
-
-void Switch_Color(int arrow) {
-	switch (arrow)
-	{
-	case 0: case 1:case 2:
-		for (int i = 0; i < 3; i++) {
-			int tmp = map[i][MAP_SIZE - arrow - 1];
-			tmp = tmp == 1 ? 0 : 1;
-			map[i][MAP_SIZE - arrow - 1] = tmp;
-		}
-		break;
-	case 3:
-		for (int i = 0; i < 3; i++) {
-			int tmp = map[i][i];
-			tmp = tmp == 1 ? 0 : 1;
-			map[i][i] = tmp;
-		}
-		break;
-	case 4: case 5: case 6:
-		for (int i = 0; i < 3; i++) {
-			int tmp = map[arrow - MAP_SIZE - 1][i];
-			tmp = tmp == 1 ? 0 : 1;
-			map[arrow - MAP_SIZE - 1][i] = tmp;
-		}
-		break;
-	case 7:
-		for (int i = 0; i < 3; i++) {
-			int tmp = map[i][MAP_SIZE - i - 1];
-			tmp = tmp == 1 ? 0 : 1;
-			map[i][MAP_SIZE - i - 1] = tmp;
-		}
-	}
-	PrintMap(map);
-}
-
