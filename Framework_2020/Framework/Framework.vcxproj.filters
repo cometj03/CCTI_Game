@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{5282736b-f12f-4907-8a63-7d81779ee44c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Framework">
+      <UniqueIdentifier>{a0123610-585f-4105-9f9c-07a454c05a6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Manager">
+      <UniqueIdentifier>{f706229a-e53f-4613-a36e-d777014971e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\GameClass">
+      <UniqueIdentifier>{c3334f96-62f5-4b47-a7dd-881d2953400a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Components">
+      <UniqueIdentifier>{3d32a544-6aad-4c31-a9fe-265993684270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene">
+      <UniqueIdentifier>{9bffd8c3-666c-4a93-a5b7-cc56feae779e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestScene">
+      <UniqueIdentifier>{33f071e4-4b64-48ef-8b93-20ffe15a533a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene\Bullet">
+      <UniqueIdentifier>{0fd91e56-85bd-470e-b6b6-d5f382481843}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Components\Rendering">
+      <UniqueIdentifier>{319e16dd-5e0f-448f-a8f4-06bfb82b4efd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Components\Rendering\Animation">
+      <UniqueIdentifier>{a027087e-44b1-472d-afb7-316de7b537c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Components\Transform">
+      <UniqueIdentifier>{236600f8-0352-4ede-8ec2-de492e0d940f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Math">
+      <UniqueIdentifier>{b4de36eb-d40c-4e1b-b67d-0e0df220118f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Manager\Input">
+      <UniqueIdentifier>{24fd6e83-06e1-4f44-be64-241653319a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Manager\Rendering">
+      <UniqueIdentifier>{c097f264-41b2-4c13-af8f-0cffda9391ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Manager\Time">
+      <UniqueIdentifier>{cd9d2984-adb0-4e43-93f5-c69b321e05f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Components\Collider">
+      <UniqueIdentifier>{70e32445-8a9d-4d20-bb4f-4fa008ec59fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Manager\Collision">
+      <UniqueIdentifier>{1603b277-b0ae-4f75-ae6a-93f3467d2de7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene\Player">
+      <UniqueIdentifier>{37e028af-bedd-449b-a3ab-1a3db18a58f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene\Enemy">
+      <UniqueIdentifier>{4d90abbc-2af3-4e90-b52b-ead1104bb32b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Components\Rendering\Font">
+      <UniqueIdentifier>{b3cc462c-9395-4b72-b75d-b3bc7b4dcef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Components\SoundEvent">
+      <UniqueIdentifier>{7c82c8e8-0232-4e29-8d48-1bdcc6c7d50f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Engine">
+      <UniqueIdentifier>{d24f3e45-29b4-413e-8aeb-7a8b7de39dbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\stdafx">
+      <UniqueIdentifier>{bcc4263f-6a5e-40ad-93ff-066f8bdc8406}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D2DApp.cpp">
+      <Filter>Framework\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="WinApp.cpp">
+      <Filter>Framework\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Framework\GameClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Framework\GameClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework.cpp">
+      <Filter>Framework\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Framework\Components\Rendering\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationInfo.cpp">
+      <Filter>Framework\Components\Rendering\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="SheetAnimation.cpp">
+      <Filter>Framework\Components\Rendering\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ListAnimation.cpp">
+      <Filter>Framework\Components\Rendering\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationObject.cpp">
+      <Filter>TestScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>TestScene</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Bullet.cpp">
+      <Filter>GameScene\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderInfo.cpp">
+      <Filter>Framework\Components\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Framework\Components\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Framework\Manager\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderingManager.cpp">
+      <Filter>Framework\Manager\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>Framework\Manager\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="AABBCollider.cpp">
+      <Filter>Framework\Components\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Framework\Components\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Framework\Manager\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>GameScene\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>GameScene\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>GameScene\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemySpawner.cpp">
+      <Filter>GameScene\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Framework\GameClass</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundEvent.cpp">
+      <Filter>Framework\Components\SoundEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>Framework\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Framework\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="FontInfo.cpp">
+      <Filter>Framework\Components\Rendering\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Framework\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="FontObject.cpp">
+      <Filter>TestScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleCollider.cpp">
+      <Filter>Framework\Components\Collider</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WinApp.h">
+      <Filter>Framework\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="D2DApp.h">
+      <Filter>Framework\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Framework\GameClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Framework\GameClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework.h">
+      <Filter>Framework\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Framework\Components\Rendering\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationInfo.h">
+      <Filter>Framework\Components\Rendering\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="SheetAnimation.h">
+      <Filter>Framework\Components\Rendering\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ListAnimation.h">
+      <Filter>Framework\Components\Rendering\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationObject.h">
+      <Filter>TestScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>TestScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>GameScene\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderInfo.h">
+      <Filter>Framework\Components\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Framework\Components\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Framework\Manager\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderingManager.h">
+      <Filter>Framework\Manager\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>Framework\Manager\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBCollider.h">
+      <Filter>Framework\Components\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Framework\Components\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Framework\Manager\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>GameScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>GameScene\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="tag.h" />
+    <ClInclude Include="EnemySpawner.h">
+      <Filter>GameScene\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>GameScene\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Framework\GameClass</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEvent.h">
+      <Filter>Framework\Components\SoundEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>Framework\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Framework\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Framework\stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="FontInfo.h">
+      <Filter>Framework\Components\Rendering\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Framework\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="FontObject.h">
+      <Filter>TestScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleCollider.h">
+      <Filter>Framework\Components\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckMemoryLeak.h">
+      <Filter>Framework\stdafx</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vector2.inl">
+      <Filter>Framework\Math</Filter>
+    </None>
+  </ItemGroup>
+</Project>
