@@ -52,4 +52,7 @@
 #define PI 3.141592653589793f
 #define RADTOEULER -180.0f/PI
 
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 600
+
 typedef D2D1_POINT_2F Point;

@@ -9,5 +9,5 @@ void TestScene::Initialize()
 	//UI 오브젝트는, 카메라와 상관없이 화면 상의 위치를 기준으로 합니다.
 	FontObject* fo = new FontObject();
 	PushUI(fo);
-	fo->transform->SetPosition(400.0f, 300.0f);
+	fo->transform->SetPosition(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f);
 }
