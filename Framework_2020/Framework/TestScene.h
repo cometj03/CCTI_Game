@@ -1,6 +1,9 @@
 #pragma once
 #include "Scene.h"
 #include "AnimationObject.h"
+
+//예시 Scene입니다.
+
 class TestScene :
 	public Scene
 {

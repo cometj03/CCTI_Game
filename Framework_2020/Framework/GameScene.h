@@ -9,9 +9,6 @@
 class GameScene : public Scene
 {
 public:
-	GameScene();
-	~GameScene();
-
 	virtual void Initialize();
 
 	GameObject* background;	//배경 이미지

@@ -1,6 +1,16 @@
 #pragma once
 #include "stdafx.h"
 #include "Audio.h"
+
+//사운드를 출력하기 위한 함수입니다.
+//실제 사운드를 로드하여 저장하고, 출력합니다.
+//사운드 정보를 저장합니다.
+//LoadFile을 통해 파일을 로드하고,
+//Play, Stop, Pause 함수로 조절합니다.
+
+//Sprite와는 다르게, 각 사운드는 로드될 때마다 각각 따로 저장됩니다.
+//제 구현 실수입니다 ㅠㅠ
+
 class SoundEvent
 {
 private:

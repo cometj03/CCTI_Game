@@ -1,6 +1,8 @@
 #pragma once
 #include "Collider.h"
 
+//AABBBox 형태의 충돌체를 나타냅니다.
+
 class AABBCollider : public Collider
 {
 public:
@@ -22,5 +24,6 @@ public:
 	float GetSquareDiagonal();
 
 	bool isMouseOn();
+	bool isMouseOnUI();
 };
 

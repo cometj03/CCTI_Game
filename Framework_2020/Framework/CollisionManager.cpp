@@ -144,7 +144,8 @@ bool CollisionManager::Intersected(AABBCollider* a, CircleCollider* b)
 	Collider::Circle bcircle = b->GetTransformedCircle();
 	circleDistance.x = (abox.rightBottom.x + abox.leftTop.x) * 0.5f - bcircle.center.x;
 	circleDistance.y = (abox.rightBottom.y + abox.leftTop.y) * 0.5f - bcircle.center.y;
-	Vector2 halfBox = Vector2((abox.rightBottom - abox.leftTop) * 0.5f);
+	//Vector2 halfBox = Vector2((abox.rightBottom - abox.leftTop) * 0.5f);
+	Vector2 halfBox = Vector2(abox.rightBottom.x - abox.leftTop.x, abox.leftTop.y - abox.rightBottom.y);
 
 	circleDistance.x *= (circleDistance.x >= 0) ? 1.0f : -1.0f;
 	circleDistance.y *= (circleDistance.y >= 0) ? 1.0f : -1.0f;

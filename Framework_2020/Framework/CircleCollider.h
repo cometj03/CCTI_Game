@@ -1,5 +1,8 @@
 #pragma once
 #include "Collider.h"
+
+//원 형태의 충돌체를 나타냅니다.
+
 class CircleCollider :
 	public Collider
 {

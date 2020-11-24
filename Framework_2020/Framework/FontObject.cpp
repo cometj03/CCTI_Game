@@ -26,7 +26,7 @@ void FontObject::Update()
 	timer += TimeManager::GetDeltaTime();
 	if (timer > 3.0f)
 	{
-		fontRenderer->font->UpdateFontStyle(L"궁서",24.0f,1.0f,0.0f,0.0f,0.5f,true);
+		fontRenderer->font->UpdateFontStyle(L"궁서",18.0f,1.0f,0.0f,0.0f,0.5f,true);
 		fontRenderer->text = L"Enter키를 누르면 넘어갑니다.\n아니면 여기를 클릭하세요.";
 		std::wcout << fontRenderer->text;
 	}

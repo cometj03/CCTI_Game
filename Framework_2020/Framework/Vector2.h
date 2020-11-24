@@ -1,4 +1,6 @@
 #pragma once
+//2차원 벡터를 나타내는 구조체입니다.
+//여러 기본 연산을 지원합니다.
 
 struct Vector2 {
 	float x, y;

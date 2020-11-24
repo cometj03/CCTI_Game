@@ -70,6 +70,15 @@
     <Filter Include="Framework\stdafx">
       <UniqueIdentifier>{bcc4263f-6a5e-40ad-93ff-066f8bdc8406}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameScene\UI">
+      <UniqueIdentifier>{c5a9e657-ab30-4355-898b-c9c00323eb03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StartScene">
+      <UniqueIdentifier>{27b2be83-2324-42a0-8b47-93deea9eb0e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EndingScene">
+      <UniqueIdentifier>{6ecb2b44-2528-4922-abaa-8e40cced20db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D2DApp.cpp">
@@ -174,6 +183,28 @@
     </ClCompile>
     <ClCompile Include="CircleCollider.cpp">
       <Filter>Framework\Components\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreManager.cpp">
+      <Filter>GameScene\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>StartScene</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>StartScene</Filter>
+    </ClCompile>
+    <ClCompile Include="StartButton.cpp">
+      <Filter>StartScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ExitButton.cpp">
+      <Filter>StartScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TextObject.cpp" />
+    <ClCompile Include="EndingScene.cpp">
+      <Filter>EndingScene</Filter>
+    </ClCompile>
+    <ClCompile Include="EndToMain.cpp">
+      <Filter>EndingScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +319,28 @@
     </ClInclude>
     <ClInclude Include="CheckMemoryLeak.h">
       <Filter>Framework\stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreManager.h">
+      <Filter>GameScene\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>StartScene</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>StartScene</Filter>
+    </ClInclude>
+    <ClInclude Include="StartButton.h">
+      <Filter>StartScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitButton.h">
+      <Filter>StartScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TextObject.h" />
+    <ClInclude Include="EndToMain.h">
+      <Filter>EndingScene</Filter>
+    </ClInclude>
+    <ClInclude Include="EndingScene.h">
+      <Filter>EndingScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

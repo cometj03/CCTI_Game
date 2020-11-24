@@ -6,7 +6,7 @@
 Scene* Scene::currentScene = nullptr;
 Scene* Scene::nextScene = nullptr;
 
-Scene::Scene(): renderingManager(nullptr), camera(nullptr)
+Scene::Scene(): renderingManager(nullptr), collisionManager(nullptr), camera(nullptr), d2dApp(nullptr)
 {
 }
 
@@ -17,7 +17,7 @@ Scene::~Scene()
 		SAFE_DELETE(i);
 	}
 	gameObjectList.clear();
-	renderableList.clear();
+	renderableList.clear();	
 	SAFE_DELETE(renderingManager);
 	SAFE_DELETE(collisionManager);
 }
@@ -41,6 +41,8 @@ void Scene::SwapScene(D2DApp* d2dApp)
 
 void Scene::ChangeScene(Scene* nextScene)
 {
+	if (Scene::nextScene)
+		SAFE_DELETE(Scene::nextScene);
 	Scene::nextScene = nextScene;
 }
 

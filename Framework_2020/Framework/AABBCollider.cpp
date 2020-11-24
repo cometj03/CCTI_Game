@@ -82,6 +82,25 @@ float AABBCollider::GetSquareDiagonal()
 bool AABBCollider::isMouseOn()
 {
 	Vector2 v = Camera::ScreenPositionToWorld(Vector2((float)InputManager::GetMouseX(), (float)InputManager::GetMouseY()));
-	AABBBox b = GetTransformedBox();
+	/*AABBBox b = GetTransformedBox();
+	b.leftTop.x *= target->transform->scale.x;
+	b.leftTop.y *= target->transform->scale.y;
+	b.rightBottom.x *= target->transform->scale.x;
+	b.rightBottom.y *= target->transform->scale.y;*/
+
+	AABBBox b(
+		transform->position + boundingBox.leftTop * transform->scale,
+		transform->position + boundingBox.rightBottom * transform->scale);
 	return v.x<b.rightBottom.x&&v.x>b.leftTop.x&&v.y<b.leftTop.y&&v.y>b.rightBottom.y;
+}
+
+
+bool AABBCollider::isMouseOnUI()
+{
+	Vector2 v((float)InputManager::GetMouseX(), (float)InputManager::GetMouseY());
+	AABBBox b(
+		transform->position + boundingBox.leftTop * transform->scale,
+		transform->position + boundingBox.rightBottom * transform->scale);
+
+	return v.x<b.rightBottom.x && v.x>b.leftTop.x && v.y<b.leftTop.y && v.y>b.rightBottom.y;
 }
