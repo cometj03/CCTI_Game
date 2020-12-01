@@ -129,7 +129,9 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationInfo.cpp" />
     <ClCompile Include="AnimationObject.cpp" />
+    <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="BoardScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
@@ -174,7 +176,9 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationInfo.h" />
     <ClInclude Include="AnimationObject.h" />
+    <ClInclude Include="Arrow.h" />
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="BoardScene.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
