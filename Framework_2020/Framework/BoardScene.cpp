@@ -12,7 +12,10 @@ BoardScene::~BoardScene()
 void BoardScene::Initialize()
 {
 	background = Push(new GameObject(L"resources/image/board_1.png"));
-	arrow = new Arrow();
-	arrow->transform->SetPosition(-155, 75);
+	
+	arrow = new Arrow(new AnimationInfo);
 	Push(arrow);
+
+	coins = new Coin(new AnimationInfo);
+	Push(coins);
 }

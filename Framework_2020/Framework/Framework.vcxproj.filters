@@ -221,6 +221,9 @@
     <ClCompile Include="Arrow.cpp">
       <Filter>Project\Board</Filter>
     </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>Project\Board</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinApp.h">
@@ -361,6 +364,9 @@
       <Filter>Project\Board</Filter>
     </ClInclude>
     <ClInclude Include="Arrow.h">
+      <Filter>Project\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
       <Filter>Project\Board</Filter>
     </ClInclude>
   </ItemGroup>
