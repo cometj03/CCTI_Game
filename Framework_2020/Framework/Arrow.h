@@ -8,6 +8,9 @@ enum class eArrow {
 	Right, Down, RD, RU
 };
 
+static const Vector2 limitPos = Vector2(3, -4);
+static const Vector2 offset = Vector2(-150, 150);
+
 class Arrow : public GameObject
 {
 public:
@@ -16,8 +19,6 @@ public:
 
 	eArrow state;
 	Vector2 posVec;
-	const Vector2 limitPos = Vector2(3, -4);
-	const Vector2 offset = Vector2(-150, 150);
 
 	AnimationInfo* animRenderer;
 	std::vector<ListAnimation*> arrowShape;
@@ -26,6 +27,7 @@ public:
 	void Move();
 	void ChangeSprite();
 	void SwitchCoins();
+	// TODO: 리스트 전송하는 함수
 
 	std::vector<Coin*> coins;
 	void PutCoins(std::vector<Coin*> c);

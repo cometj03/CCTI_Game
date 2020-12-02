@@ -11,7 +11,8 @@ BoardScene::~BoardScene()
 
 void BoardScene::Initialize()
 {
-	background = Push(new GameObject(L"resources/image/board_1.png"));	
+	background = Push(new GameObject(L"resources/image/background.png"));
+	board = Push(new GameObject(L"resources/image/board_1.png"));	
 	
 	/*
 	* 0 1 2

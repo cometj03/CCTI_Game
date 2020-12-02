@@ -12,6 +12,7 @@ public:
 	~BoardScene();
 
 	GameObject* background;
+	GameObject* board;
 	Arrow* arrow;
 	std::vector<Coin*> coins;
 
