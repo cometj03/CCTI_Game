@@ -10,7 +10,7 @@ public:
 	~Coin();
 
 	AnimationInfo* animRenderer;
-	SheetAnimation* coinAnimList[];	// TODO: 애니메이션 한번만 실행되게 바꾸기
+	std::vector<SheetAnimation*> coinAnimList;
 
 	virtual void Update();
 	void SwitchCoin();

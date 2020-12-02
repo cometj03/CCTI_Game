@@ -3,6 +3,8 @@
 #include "Arrow.h"
 #include "Coin.h"
 
+#define BOARD_INTERVAL 75	// 보드 한 칸 사이의 간격
+
 class BoardScene : public Scene
 {
 public:
@@ -11,7 +13,7 @@ public:
 
 	GameObject* background;
 	Arrow* arrow;
-	Coin* coins;	// TODO: 코인 배열 생성 후 코인 배치
+	std::vector<Coin*> coins;
 
 	virtual void Initialize();
 };

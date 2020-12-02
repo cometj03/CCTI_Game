@@ -2,8 +2,7 @@
 #include "GameObject.h"
 #include "AnimationInfo.h"
 #include "ListAnimation.h"
-
-#include <list>
+#include "Coin.h"
 
 enum class eArrow {
 	Right, Down, RD, RU
@@ -21,12 +20,14 @@ public:
 	const Vector2 offset = Vector2(-150, 150);
 
 	AnimationInfo* animRenderer;
-	ListAnimation* animList[];
+	std::vector<ListAnimation*> arrowShape;
 
 	virtual void Update();
 	void Move();
 	void ChangeSprite();
+	void SwitchCoins();
 
-	// TODO: 화살표 위치에 따라서 코인 뒤집기
+	std::vector<Coin*> coins;
+	void PutCoins(std::vector<Coin*> c);
 };
 

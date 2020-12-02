@@ -5,12 +5,17 @@
 
 
 ListAnimation::ListAnimation(const int state, float fps)
-	:Animation(state, fps), iter(sprites.begin())
+	:Animation(state, fps), iter(sprites.begin()), animateOnce(false)
 {
 }
 
 ListAnimation::~ListAnimation()
 {
+}
+
+void ListAnimation::SetAnimateOnce(bool isOnce)
+{
+	animateOnce = isOnce;
 }
 
 Sprite* ListAnimation::UpdateAnim()
@@ -23,9 +28,14 @@ Sprite* ListAnimation::UpdateAnim()
 	if (frameTime > reciprocalFPS)
 	{
 		frameTime = 0.0f;
-		++currentFrame;
-		++iter;
-		if (currentFrame >= length)
+
+		// SheetAnimation과 같은 알고리즘 사용함
+		if (currentFrame < length - 1)
+		{
+			++currentFrame;
+			++iter;
+		}
+		else if (!animateOnce) 
 		{
 			currentFrame = 0;
 			iter = sprites.begin();

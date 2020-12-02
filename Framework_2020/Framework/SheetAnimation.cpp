@@ -4,8 +4,10 @@
 #include "TimeManager.h"
 
 SheetAnimation::SheetAnimation(const int state, float fps, const wchar_t* sheetPath, int width, int height, int length)
-	:Animation(state, fps), width(width), height(height), rowCount(0)
+	: Animation(state, fps), width(width), height(height), rowCount(0)
 {
+	animateOnce = false;
+
 	sheet = Scene::GetCurrentScene()->GetRenderingManager()->LoadBitmapFromFile(sheetPath, 0, 0);
 	if (sheet)
 	{
@@ -32,8 +34,10 @@ SheetAnimation::SheetAnimation(const int state, float fps, const wchar_t* sheetP
 }
 
 SheetAnimation::SheetAnimation(const int state, float fps, const wchar_t* sheetPath, int rowCount, int length)
-	:Animation(state, fps), rowCount(rowCount), width(0), height(0)
+	: Animation(state, fps), rowCount(rowCount), width(0), height(0)
 {
+	animateOnce = false;
+	
 	sheet = Scene::GetCurrentScene()->GetRenderingManager()->LoadBitmapFromFile(sheetPath, 0, 0);
 	if (sheet)
 	{
@@ -66,6 +70,11 @@ SheetAnimation::SheetAnimation(const int state, float fps, const wchar_t* sheetP
 	}
 }
 
+void SheetAnimation::SetAnimateOnce(bool isOnce)
+{
+	animateOnce = isOnce;
+}
+
 D2D1_RECT_F* SheetAnimation::GetSourceRect()
 {
 	return &currentSourceRect;
@@ -90,17 +99,18 @@ Sprite* SheetAnimation::UpdateAnim()
 {
 	if (length == 0)
 		return nullptr;
-	//printf("d");
+
 	frameTime += TimeManager::GetDeltaTime();
 	//다음 프레임으로 전환할지 확인
 	if (frameTime > reciprocalFPS)
 	{
 		frameTime = 0.0f;
-		++currentFrame;
-		if (currentFrame >= length)
-		{
+
+		if (currentFrame < length - 1)	// out of range 때문에 -1 해줌
+			++currentFrame;
+		else if (!animateOnce)	// animateOnce==true이면 애니메이션 한번만 실행하게 해줌
 			currentFrame = 0;
-		}
+
 		currentSourceRect = sourceRects[currentFrame];
 	}
 	return sheet;

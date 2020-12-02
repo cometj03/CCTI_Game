@@ -16,6 +16,9 @@ public:
 	int width, height;	//애니메이션을 자를 단위
 	int rowCount;
 
+	bool animateOnce;
+	void SetAnimateOnce(bool isOnce);
+
 public:
 	//프레임워크 내부적으로 작동하는 함수입니다.
 	virtual D2D1_RECT_F* GetSourceRect();
