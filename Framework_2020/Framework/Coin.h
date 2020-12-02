@@ -9,10 +9,13 @@ public:
 	Coin(AnimationInfo* animInfo);
 	~Coin();
 
+	int cur;
+
 	AnimationInfo* animRenderer;
 	std::vector<SheetAnimation*> coinAnimList;
 
 	virtual void Update();
-	void SwitchCoin();
+	void FlipCoin();
+	int GetCurrentCur();
 };
 

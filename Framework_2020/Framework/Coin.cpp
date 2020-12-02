@@ -3,7 +3,7 @@
 #include "InputManager.h"
 
 Coin::Coin(AnimationInfo* animInfo)
-	: GameObject(animInfo)
+	: GameObject(animInfo), cur(0)
 {
 	animRenderer = animInfo;
 
@@ -26,9 +26,8 @@ void Coin::Update()
 
 }
 
-void Coin::SwitchCoin()
+void Coin::FlipCoin()
 {
-	static int cur = 0;
 	if (cur == 1) 
 	{
 		cur = 0;
@@ -39,4 +38,9 @@ void Coin::SwitchCoin()
 		cur = 1;
 		animRenderer->ChangeAnimation(1);
 	}
+}
+
+int Coin::GetCurrentCur()
+{
+	return cur;
 }

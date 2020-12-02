@@ -95,33 +95,41 @@ void Arrow::ChangeSprite()
 
 void Arrow::SwitchCoins()
 {
+	std::list<int> num = CreateList();
+	std::list<int>::iterator num_iter = num.begin();
+
+	for (auto i = num_iter; i != num.end(); i++) {
+		std::cout << *i << std::endl;
+		coins[*i]->FlipCoin();
+	}
+}
+
+std::list<int> Arrow::CreateList()
+{
+	std::list<int> num;
+
 	switch (state)
 	{
 	case eArrow::Right:
 		for (int i = (-posVec.y - 1) * 3; i < -posVec.y * 3; i++)
-			coins[i]->SwitchCoin();
-
-		std::cout << "Right " << posVec.y << std::endl;
+			num.push_back(i);
 		break;
 	case eArrow::Down:
 		for (int i = posVec.x - 1; i < coins.size(); i += 3)
-			coins[i]->SwitchCoin();
-
-		std::cout << "Down " << posVec.x << std::endl;
+			num.push_back(i);
 		break;
 	case eArrow::RD:
 		for (int i = 0; i < coins.size(); i += 4)
-			coins[i]->SwitchCoin();
-		std::cout << "RD " << posVec.y << std::endl;
+			num.push_back(i);
 		break;
 	case eArrow::RU:
 		for (int i = 6; i > 0; i -= 2)
-			coins[i]->SwitchCoin();
-		std::cout << "RU " << posVec.y << std::endl;
+			num.push_back(i);
 		break;
 	default:
 		break;
 	}
+	return num;
 }
 
 void Arrow::PutCoins(std::vector<Coin*> c)

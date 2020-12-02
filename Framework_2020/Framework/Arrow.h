@@ -19,6 +19,7 @@ public:
 
 	eArrow state;
 	Vector2 posVec;
+	float coolTime;
 
 	AnimationInfo* animRenderer;
 	std::vector<ListAnimation*> arrowShape;
@@ -27,7 +28,7 @@ public:
 	void Move();
 	void ChangeSprite();
 	void SwitchCoins();
-	// TODO: 리스트 전송하는 함수
+	std::list<int> CreateList();
 
 	std::vector<Coin*> coins;
 	void PutCoins(std::vector<Coin*> c);
