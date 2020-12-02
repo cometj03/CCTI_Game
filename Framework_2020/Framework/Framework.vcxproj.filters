@@ -88,6 +88,12 @@
     <Filter Include="Project\Board">
       <UniqueIdentifier>{54f5ac8f-7c7f-4c7d-81c9-e4c2bba87789}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\UI">
+      <UniqueIdentifier>{cd4bdd25-0755-4ca9-a2af-d9143f1625c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Main">
+      <UniqueIdentifier>{fede4bd6-738a-4aad-b7b4-2fe9f23a351f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D2DApp.cpp">
@@ -196,19 +202,12 @@
     <ClCompile Include="ScoreManager.cpp">
       <Filter>Sample\GameScene\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Sample\StartScene</Filter>
-    </ClCompile>
     <ClCompile Include="StartScene.cpp">
-      <Filter>Sample\StartScene</Filter>
-    </ClCompile>
-    <ClCompile Include="StartButton.cpp">
       <Filter>Sample\StartScene</Filter>
     </ClCompile>
     <ClCompile Include="ExitButton.cpp">
       <Filter>Sample\StartScene</Filter>
     </ClCompile>
-    <ClCompile Include="TextObject.cpp" />
     <ClCompile Include="EndingScene.cpp">
       <Filter>Sample\EndingScene</Filter>
     </ClCompile>
@@ -223,6 +222,21 @@
     </ClCompile>
     <ClCompile Include="Coin.cpp">
       <Filter>Project\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Framework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="TextObject.cpp">
+      <Filter>Framework\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Project\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="StartButton.cpp">
+      <Filter>Sample\StartScene</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayButton.cpp">
+      <Filter>Project\Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -341,19 +355,12 @@
     <ClInclude Include="ScoreManager.h">
       <Filter>Sample\GameScene\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Sample\StartScene</Filter>
-    </ClInclude>
     <ClInclude Include="StartScene.h">
-      <Filter>Sample\StartScene</Filter>
-    </ClInclude>
-    <ClInclude Include="StartButton.h">
       <Filter>Sample\StartScene</Filter>
     </ClInclude>
     <ClInclude Include="ExitButton.h">
       <Filter>Sample\StartScene</Filter>
     </ClInclude>
-    <ClInclude Include="TextObject.h" />
     <ClInclude Include="EndToMain.h">
       <Filter>Sample\EndingScene</Filter>
     </ClInclude>
@@ -368,6 +375,21 @@
     </ClInclude>
     <ClInclude Include="Coin.h">
       <Filter>Project\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Framework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="TextObject.h">
+      <Filter>Framework\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScene.h">
+      <Filter>Project\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="StartButton.h">
+      <Filter>Sample\StartScene</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayButton.h">
+      <Filter>Project\Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

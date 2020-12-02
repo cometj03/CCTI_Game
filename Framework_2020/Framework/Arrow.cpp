@@ -98,6 +98,7 @@ void Arrow::SwitchCoins()
 	std::list<int> num = CreateList();
 	std::list<int>::iterator num_iter = num.begin();
 
+	// TODO: Â÷·Ê´ë·Î ¹Ù²î°Ô
 	for (auto i = num_iter; i != num.end(); i++) {
 		std::cout << *i << std::endl;
 		coins[*i]->FlipCoin();
@@ -110,19 +111,19 @@ std::list<int> Arrow::CreateList()
 
 	switch (state)
 	{
-	case eArrow::Right:
+	case eArrow::Right:	// ex) 0, 1, 2
 		for (int i = (-posVec.y - 1) * 3; i < -posVec.y * 3; i++)
 			num.push_back(i);
 		break;
-	case eArrow::Down:
+	case eArrow::Down:	// ex) 0, 3, 6
 		for (int i = posVec.x - 1; i < coins.size(); i += 3)
 			num.push_back(i);
 		break;
-	case eArrow::RD:
+	case eArrow::RD:	// ex) 0, 4, 8
 		for (int i = 0; i < coins.size(); i += 4)
 			num.push_back(i);
 		break;
-	case eArrow::RU:
+	case eArrow::RU:	// ex) 6, 4, 2
 		for (int i = 6; i > 0; i -= 2)
 			num.push_back(i);
 		break;

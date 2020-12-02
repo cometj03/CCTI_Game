@@ -131,6 +131,7 @@
     <ClCompile Include="AnimationObject.cpp" />
     <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="PlayButton.cpp" />
     <ClCompile Include="BoardScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Button.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="ListAnimation.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="RenderInfo.cpp" />
@@ -179,6 +181,7 @@
     <ClInclude Include="AnimationObject.h" />
     <ClInclude Include="Arrow.h" />
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="PlayButton.h" />
     <ClInclude Include="BoardScene.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Button.h" />
@@ -203,6 +206,7 @@
     <ClInclude Include="Gun.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="ListAnimation.h" />
+    <ClInclude Include="MainScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="RenderInfo.h" />
