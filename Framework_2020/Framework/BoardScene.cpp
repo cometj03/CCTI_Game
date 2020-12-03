@@ -14,7 +14,6 @@ BoardScene::~BoardScene()
 void BoardScene::Initialize()
 {
 	GameManager::Init();	// 게임 매니저 초기화
-	GameManager::GetScore();
 
 	background = Push(new GameObject(L"resources/image/background.png"));
 	board = Push(new GameObject(L"resources/image/board_1.png"));
@@ -43,5 +42,6 @@ void BoardScene::Initialize()
 	st->UpdateScore();
 	PushUI(st);
 
-	GameManager::PutScoreText(st);
+	GameManager::GetInstance()->PutScoreText(st);
+	GameManager::GetInstance()->PutCoins(coins);
 }

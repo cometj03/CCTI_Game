@@ -106,6 +106,9 @@
     <Filter Include="Project\Board\Tile">
       <UniqueIdentifier>{afa57564-7693-4fc2-95c3-9ccaac92aad7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\TheEnd">
+      <UniqueIdentifier>{27687fd9-b78a-4251-8ee3-5aaedabcc45e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D2DApp.cpp">
@@ -260,7 +263,7 @@
       <Filter>Project\Board\Arrow</Filter>
     </ClCompile>
     <ClCompile Include="OverScene.cpp">
-      <Filter>Project</Filter>
+      <Filter>Project\TheEnd</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -425,7 +428,7 @@
       <Filter>Project\Board\Arrow</Filter>
     </ClInclude>
     <ClInclude Include="OverScene.h">
-      <Filter>Project</Filter>
+      <Filter>Project\TheEnd</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

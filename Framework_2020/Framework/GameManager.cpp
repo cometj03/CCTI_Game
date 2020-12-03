@@ -27,16 +27,6 @@ void GameManager::Init()
 	i->score = MAX_TURN;
 }
 
-int GameManager::GetScore()
-{
-	GameManager* i = GetInstance();
-
-	i->score = i->maxTurn - i->currentTurn;
-
-	std::cout << "현재 점수 : " << i->score << std::endl;
-	return i->score;
-}
-
 void GameManager::AddScore(int d)
 {
 	GameManager* i = GetInstance();
@@ -48,9 +38,31 @@ void GameManager::AddScore(int d)
 		Scene::ChangeScene(new OverScene());	// 게임 오버
 }
 
-void GameManager::PutScoreText(ScoreText* st)
+void GameManager::GameManagerUpdate()
 {
+	// 턴이 다 끝났을 때 실행
 	GameManager* i = GetInstance();
 
-	i->scoreText = st;
+	// 모두 같은 면인지 체크
+	bool flag = true;
+	for (int k = 1; k < i->coins.size() - 1; k++) {
+		// 지금 것과 다음 것이 같은지 -> 다르면 flag = false
+		if (i->coins[k]->GetCurrentCur() != i->coins[k + 1]->GetCurrentCur()) {
+			flag = false;
+			break;
+		}
+	}
+
+	if (flag)
+		std::cout << "게임 클리어!" << std::endl;
+}
+
+void GameManager::PutScoreText(ScoreText* st)
+{
+	GetInstance()->scoreText = st;
+}
+
+void GameManager::PutCoins(std::vector<Coin*> &c)
+{
+	GetInstance()->coins = c;
 }

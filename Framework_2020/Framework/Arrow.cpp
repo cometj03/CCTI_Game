@@ -110,6 +110,7 @@ void Arrow::SwitchCoins()
 		coins[*num_iter]->FlipWithDelay(0.1f * i);
 		num_iter++;
 	}
+	coins[num.back()]->isLastCoin = true;
 }
 
 std::list<int> Arrow::CreateList()
@@ -140,7 +141,7 @@ std::list<int> Arrow::CreateList()
 	return num;
 }
 
-void Arrow::PutCoins(std::vector<Coin*> c)
+void Arrow::PutCoins(std::vector<Coin*> &c)
 {
 	coins = c;
 }

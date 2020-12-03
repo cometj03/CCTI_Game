@@ -1,5 +1,6 @@
 #pragma once
 #include "ScoreText.h"
+#include "Coin.h"
 
 #define MAX_TURN 100
 
@@ -10,9 +11,9 @@ public:
 
 public:
 	static void Init();
-	static int GetScore();
 	static void AddScore(int d);
-	static void PutScoreText(ScoreText* st);
+
+	static void GameManagerUpdate();
 
 	static GameManager* GetInstance();
 
@@ -21,5 +22,9 @@ public:
 	int maxTurn;
 
 	ScoreText* scoreText;
+	static void PutScoreText(ScoreText* st);
+
+	std::vector<Coin*> coins;
+	static void PutCoins(std::vector<Coin*> &c);
 };
 

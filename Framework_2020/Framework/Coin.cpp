@@ -2,9 +2,10 @@
 #include "Coin.h"
 #include "InputManager.h"
 #include "TimeManager.h"
+#include "GameManager.h"
 
 Coin::Coin(AnimationInfo* animInfo)
-	: GameObject(animInfo), cur(0), flipCount(0), takenTime(0)
+	: GameObject(animInfo), cur(0), flipCount(0), takenTime(0), isLastCoin(false)
 {
 	delayTimes.clear();
 	animRenderer = animInfo;
@@ -61,6 +62,11 @@ void Coin::FlipCoin()
 	{
 		cur = 1;
 		animRenderer->ChangeAnimation(1);
+	}
+	
+	if (isLastCoin) {
+		GameManager::GetInstance()->GameManagerUpdate();
+		isLastCoin = false;
 	}
 }
 

@@ -12,6 +12,7 @@ public:
 	int cur;
 	int flipCount;
 	float takenTime;
+	bool isLastCoin;
 	std::list<float> delayTimes;
 
 	AnimationInfo* animRenderer;

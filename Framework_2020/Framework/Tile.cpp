@@ -19,6 +19,10 @@ void Tile::Update()
 {
 	if (InputManager::GetKeyDown('Q'))
 		FadeIn(Random::Range(0, 8));
+	
+	if (InputManager::GetKeyDown('W'))
+		FadeOut();
+
 
 	if (isIn)
 	{
@@ -36,7 +40,15 @@ void Tile::Update()
 	else if (isOut)
 	{
 		// FadeOut ÇÒ ÀÚ¸®
-
+		if (alpha > 0) {
+			alpha -= TimeManager::GetDeltaTime() * 2;
+			renderer->alpha = alpha;
+		}
+		else {
+			alpha = 0;
+			renderer->alpha = 0;
+			isOut = false;
+		}
 	}
 }
 
@@ -52,4 +64,6 @@ void Tile::FadeIn(int pos)
 
 void Tile::FadeOut()
 {
+	alpha = renderer->alpha;
+	isOut = true;
 }
