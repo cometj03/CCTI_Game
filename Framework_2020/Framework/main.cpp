@@ -5,6 +5,7 @@
 #include "StartScene.h"
 #include "BoardScene.h"
 #include "MainScene.h"
+#include "OverScene.h"
 
 int main()
 {

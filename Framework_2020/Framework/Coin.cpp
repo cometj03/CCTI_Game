@@ -53,6 +53,12 @@ void Coin::FlipWithDelay(float delayTime)
 
 void Coin::FlipCoin()
 {
+	if (isLastCoin > 0) {
+		GameManager::GetInstance()->GameManagerUpdate();
+		GameManager::GetInstance()->GameCheck();
+		isLastCoin--;
+	}
+
 	if (cur == 1) 
 	{
 		cur = 0;
@@ -62,11 +68,6 @@ void Coin::FlipCoin()
 	{
 		cur = 1;
 		animRenderer->ChangeAnimation(1);
-	}
-	
-	if (isLastCoin > 0) {
-		GameManager::GetInstance()->GameManagerUpdate();
-		isLastCoin--;
 	}
 }
 

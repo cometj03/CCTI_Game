@@ -132,6 +132,7 @@
     <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="EndButton.cpp" />
     <ClCompile Include="OverScene.cpp" />
     <ClCompile Include="PlayButton.cpp" />
     <ClCompile Include="BoardScene.cpp" />
@@ -186,6 +187,7 @@
     <ClInclude Include="Arrow.h" />
     <ClInclude Include="Audio.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="EndButton.h" />
     <ClInclude Include="OverScene.h" />
     <ClInclude Include="PlayButton.h" />
     <ClInclude Include="BoardScene.h" />

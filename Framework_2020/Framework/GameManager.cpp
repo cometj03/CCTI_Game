@@ -26,6 +26,7 @@ void GameManager::Init()
 	i->currentTurn = 0;
 	i->maxTurn = MAX_TURN;
 	i->score = MAX_TURN;
+	i->isHintTime = false;
 }
 
 void GameManager::AddScore(int d)
@@ -41,6 +42,25 @@ void GameManager::AddScore(int d)
 
 void GameManager::GameManagerUpdate()
 {
+	// 턴이 다 끝났을 때, 턴 시작 때 실행
+	GameManager* i = GetInstance();
+
+	// 힌트 처리
+	if (i->currentTurn % TURN_INTERVAL == TURN_INTERVAL - 1) {	// 세 턴에 한 번씩 타일 생성
+		i->hintPos = Random::Range(0, 8);
+		i->tile->FadeIn(i->hintPos);
+		i->isHintTime = true;
+		std::cout << "힌트 준비됨 : " << i->hintPos << std::endl;
+	}
+	else if (i->currentTurn % TURN_INTERVAL == 0) {	// 그 다음턴일 때 사라짐
+		std::cout << "힌트 끝 : " << i->hintPos << std::endl;
+		i->tile->FadeOut();
+		i->isHintTime = false;
+	}
+}
+
+void GameManager::GameCheck()
+{
 	// 턴이 다 끝났을 때 실행
 	GameManager* i = GetInstance();
 
@@ -55,12 +75,7 @@ void GameManager::GameManagerUpdate()
 	}
 
 	if (flag)
-		std::cout << "게임 클리어!" << std::endl;
-
-	if (i->currentTurn % TURN_INTERVAL == TURN_INTERVAL - 1)	// 세 턴에 한 번씩 타일 생성
-		i->tile->FadeIn(Random::Range(0, 8));
-	else if (i->currentTurn % TURN_INTERVAL == 0)	// 그 다음턴일 때 사라짐
-		i->tile->FadeOut();
+		Scene::ChangeScene(new OverScene(i->score));	// 클리어
 }
 
 void GameManager::PutScoreText(ScoreText* st)

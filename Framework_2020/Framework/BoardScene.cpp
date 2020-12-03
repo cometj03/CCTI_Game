@@ -2,6 +2,7 @@
 #include "BoardScene.h"
 #include "GameManager.h"
 #include "ScoreText.h"
+#include "Random.h"
 
 BoardScene::BoardScene()
 {
@@ -35,12 +36,19 @@ void BoardScene::Initialize()
 		coins[i]->transform->SetPosition(coinPosX, coinPosY);
 		Push(coins[i]);
 	}
+
+	// 초기 코인 세팅
+	int r = Random::Range(0, 8);
+	int rr = Random::Range(0, 8);
+	coins[r]->FlipWithDelay(0.4f);
+	if (rr != r)
+		coins[rr]->FlipWithDelay(0.8f);
 	GameManager::GetInstance()->PutCoins(coins);
 	
 	arrow = new Arrow(new AnimationInfo);
 	Push(arrow);
 
-	ScoreText* st = new ScoreText(L"점수:");
+	ScoreText* st = new ScoreText(L"");
 	st->UpdateScore();
 	PushUI(st);
 	GameManager::GetInstance()->PutScoreText(st);

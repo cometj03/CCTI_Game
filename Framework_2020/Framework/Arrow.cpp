@@ -108,12 +108,25 @@ void Arrow::SwitchCoins()
 
 	std::list<int> num = CreateList();
 	std::list<int>::iterator num_iter = num.begin();
-
+	
 	for (int i = 0; i < num.size(); i++) {
 		coins[*num_iter]->FlipWithDelay(0.1f * i);
 		num_iter++;
 	}
-	coins[num.back()]->isLastCoin++;
+
+	
+	// 게임이 클리어 됐는지 확인해주는 마지막 코인
+	if (GameManager::GetInstance()->isHintTime) {
+		int hintPos = GameManager::GetInstance()->hintPos;
+		coins[num.back()]->isLastCoin++;
+
+		std::cout << "마지막 힌트 코인 " << hintPos << std::endl;
+	}
+	else {
+		coins[num.back()]->isLastCoin++;
+
+		std::cout << "마지막 코인 " << num.back() << std::endl;
+	}
 }
 
 std::list<int> Arrow::CreateList()

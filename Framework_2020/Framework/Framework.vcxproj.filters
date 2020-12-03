@@ -265,6 +265,9 @@
     <ClCompile Include="OverScene.cpp">
       <Filter>Project\TheEnd</Filter>
     </ClCompile>
+    <ClCompile Include="EndButton.cpp">
+      <Filter>Project\TheEnd</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinApp.h">
@@ -428,6 +431,9 @@
       <Filter>Project\Board\Arrow</Filter>
     </ClInclude>
     <ClInclude Include="OverScene.h">
+      <Filter>Project\TheEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="EndButton.h">
       <Filter>Project\TheEnd</Filter>
     </ClInclude>
   </ItemGroup>
