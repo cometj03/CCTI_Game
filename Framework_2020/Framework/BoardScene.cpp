@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "BoardScene.h"
 #include "GameManager.h"
+#include "ScoreText.h"
 
 BoardScene::BoardScene()
 {
@@ -13,10 +14,12 @@ BoardScene::~BoardScene()
 void BoardScene::Initialize()
 {
 	GameManager::Init();	// 게임 매니저 초기화
-
+	GameManager::GetScore();
 
 	background = Push(new GameObject(L"resources/image/background.png"));
 	board = Push(new GameObject(L"resources/image/board_1.png"));
+
+	tile = (Tile*)Push(new Tile);
 	
 	/*
 	* 0 1 2
@@ -35,4 +38,10 @@ void BoardScene::Initialize()
 	arrow = new Arrow(new AnimationInfo);
 	arrow->PutCoins(coins);
 	Push(arrow);
+
+	ScoreText* st = new ScoreText(L"점수:");
+	st->UpdateScore();
+	PushUI(st);
+
+	GameManager::PutScoreText(st);
 }

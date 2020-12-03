@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Arrow.h"
 #include "InputManager.h"
+#include "GameManager.h"
 
 Arrow::Arrow(AnimationInfo* animInfo) 
 	: GameObject(animInfo), state(eArrow::Right), posVec(Vector2(0, -1))
@@ -32,26 +33,31 @@ void Arrow::Update()
 
 	if (InputManager::GetKeyDown(VK_SPACE))
 		SwitchCoins();
+		
 }
 
 void Arrow::Move()
 {
-	if (InputManager::GetKeyDown(VK_UP))
+	if (InputManager::GetKeyDown(VK_UP) || InputManager::GetKeyDown('W'))
 	{
+		GameManager::GetInstance()->AddScore(-1);
 		posVec.y += posVec.y < 0 ? 1 : 0;
 	}
-	if (InputManager::GetKeyDown(VK_DOWN))
+	if (InputManager::GetKeyDown(VK_DOWN) || InputManager::GetKeyDown('S'))
 	{
+		GameManager::GetInstance()->AddScore(-1);
 		posVec.x = 0;
 		posVec.y -= posVec.y > limitPos.y ? 1 : 0;
 	}
-	if (InputManager::GetKeyDown(VK_RIGHT))
+	if (InputManager::GetKeyDown(VK_RIGHT) || InputManager::GetKeyDown('D'))
 	{
+		GameManager::GetInstance()->AddScore(-1);
 		posVec.y = 0;
 		posVec.x += posVec.x < limitPos.x ? 1 : 0;
 	}
-	if (InputManager::GetKeyDown(VK_LEFT))
+	if (InputManager::GetKeyDown(VK_LEFT) || InputManager::GetKeyDown('A'))
 	{
+		GameManager::GetInstance()->AddScore(-1);
 		posVec.x -= posVec.x > 0 ? 1 : 0;
 	}
 
@@ -95,6 +101,8 @@ void Arrow::ChangeSprite()
 
 void Arrow::SwitchCoins()
 {
+	GameManager::GetInstance()->AddScore(-5);
+
 	std::list<int> num = CreateList();
 	std::list<int>::iterator num_iter = num.begin();
 

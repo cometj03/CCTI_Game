@@ -94,6 +94,18 @@
     <Filter Include="Project\Main">
       <UniqueIdentifier>{fede4bd6-738a-4aad-b7b4-2fe9f23a351f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\Board\Arrow">
+      <UniqueIdentifier>{bde1f02f-091e-4483-99a2-3008eaae1198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Board\Coin">
+      <UniqueIdentifier>{273889d7-5c06-4930-bef3-6fc4d75ba8f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Board\UI">
+      <UniqueIdentifier>{f11e0ffc-c2e1-49a4-8f5f-95a42f8bf518}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Board\Tile">
+      <UniqueIdentifier>{afa57564-7693-4fc2-95c3-9ccaac92aad7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D2DApp.cpp">
@@ -217,12 +229,6 @@
     <ClCompile Include="BoardScene.cpp">
       <Filter>Project\Board</Filter>
     </ClCompile>
-    <ClCompile Include="Arrow.cpp">
-      <Filter>Project\Board</Filter>
-    </ClCompile>
-    <ClCompile Include="Coin.cpp">
-      <Filter>Project\Board</Filter>
-    </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Framework\UI</Filter>
     </ClCompile>
@@ -242,7 +248,19 @@
       <Filter>Project</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>Project\Board</Filter>
+      <Filter>Project\Board\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreText.cpp">
+      <Filter>Project\Board\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>Project\Board\Coin</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow.cpp">
+      <Filter>Project\Board\Arrow</Filter>
+    </ClCompile>
+    <ClCompile Include="OverScene.cpp">
+      <Filter>Project</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -376,12 +394,6 @@
     <ClInclude Include="BoardScene.h">
       <Filter>Project\Board</Filter>
     </ClInclude>
-    <ClInclude Include="Arrow.h">
-      <Filter>Project\Board</Filter>
-    </ClInclude>
-    <ClInclude Include="Coin.h">
-      <Filter>Project\Board</Filter>
-    </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Framework\UI</Filter>
     </ClInclude>
@@ -401,7 +413,19 @@
       <Filter>Project</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>Project\Board</Filter>
+      <Filter>Project\Board\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreText.h">
+      <Filter>Project\Board\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>Project\Board\Coin</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrow.h">
+      <Filter>Project\Board\Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="OverScene.h">
+      <Filter>Project</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
