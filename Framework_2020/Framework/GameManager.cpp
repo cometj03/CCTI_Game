@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "GameManager.h"
 #include "OverScene.h"
+#include "Random.h"
 
 GameManager::GameManager()
 {
@@ -55,6 +56,11 @@ void GameManager::GameManagerUpdate()
 
 	if (flag)
 		std::cout << "게임 클리어!" << std::endl;
+
+	if (i->currentTurn % TURN_INTERVAL == TURN_INTERVAL - 1)	// 세 턴에 한 번씩 타일 생성
+		i->tile->FadeIn(Random::Range(0, 8));
+	else if (i->currentTurn % TURN_INTERVAL == 0)	// 그 다음턴일 때 사라짐
+		i->tile->FadeOut();
 }
 
 void GameManager::PutScoreText(ScoreText* st)
@@ -65,4 +71,9 @@ void GameManager::PutScoreText(ScoreText* st)
 void GameManager::PutCoins(std::vector<Coin*> &c)
 {
 	GetInstance()->coins = c;
+}
+
+void GameManager::PutTile(Tile* t)
+{
+	GetInstance()->tile = t;
 }

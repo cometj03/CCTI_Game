@@ -31,6 +31,5 @@ public:
 	std::list<int> CreateList();
 
 	std::vector<Coin*> coins;
-	void PutCoins(std::vector<Coin*> &c);
 };
 

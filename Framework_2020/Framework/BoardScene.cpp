@@ -19,7 +19,9 @@ void BoardScene::Initialize()
 	board = Push(new GameObject(L"resources/image/board_1.png"));
 
 	tile = (Tile*)Push(new Tile);
-	
+	// 게임 매니저로 객체 포인터 전송
+	GameManager::GetInstance()->PutTile(tile);
+
 	/*
 	* 0 1 2
 	* 3 4 5
@@ -33,15 +35,14 @@ void BoardScene::Initialize()
 		coins[i]->transform->SetPosition(coinPosX, coinPosY);
 		Push(coins[i]);
 	}
+	GameManager::GetInstance()->PutCoins(coins);
 	
 	arrow = new Arrow(new AnimationInfo);
-	arrow->PutCoins(coins);
 	Push(arrow);
 
 	ScoreText* st = new ScoreText(L"점수:");
 	st->UpdateScore();
 	PushUI(st);
-
 	GameManager::GetInstance()->PutScoreText(st);
-	GameManager::GetInstance()->PutCoins(coins);
+
 }

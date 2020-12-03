@@ -11,6 +11,7 @@ public:
 	void FadeIn(int pos);
 	void FadeOut();
 
+	int currentPos;
 	bool isIn, isOut;
 	float alpha;
 };

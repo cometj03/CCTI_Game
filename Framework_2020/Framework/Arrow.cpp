@@ -20,6 +20,8 @@ Arrow::Arrow(AnimationInfo* animInfo)
 		arrowShape[i]->SetAnimateOnce(true);
 		animRenderer->PushBackAnimation(arrowShape[i]);
 	}
+
+	coins = GameManager::GetInstance()->coins;
 }
 
 Arrow::~Arrow()
@@ -102,6 +104,7 @@ void Arrow::ChangeSprite()
 void Arrow::SwitchCoins()
 {
 	GameManager::GetInstance()->AddScore(-5);
+	GameManager::GetInstance()->currentTurn++;	// 턴 하나 증가
 
 	std::list<int> num = CreateList();
 	std::list<int>::iterator num_iter = num.begin();
@@ -110,7 +113,7 @@ void Arrow::SwitchCoins()
 		coins[*num_iter]->FlipWithDelay(0.1f * i);
 		num_iter++;
 	}
-	coins[num.back()]->isLastCoin = true;
+	coins[num.back()]->isLastCoin++;
 }
 
 std::list<int> Arrow::CreateList()
@@ -139,9 +142,4 @@ std::list<int> Arrow::CreateList()
 		break;
 	}
 	return num;
-}
-
-void Arrow::PutCoins(std::vector<Coin*> &c)
-{
-	coins = c;
 }

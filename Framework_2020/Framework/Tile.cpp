@@ -2,7 +2,7 @@
 #include "Tile.h"
 #include "TimeManager.h"
 #include "InputManager.h"
-#include "Random.h"
+#include "GameManager.h"
 
 Tile::Tile() :
 	GameObject(L"resources/image/tile_1.png"), alpha(0)
@@ -17,13 +17,6 @@ Tile::~Tile()
 
 void Tile::Update()
 {
-	if (InputManager::GetKeyDown('Q'))
-		FadeIn(Random::Range(0, 8));
-	
-	if (InputManager::GetKeyDown('W'))
-		FadeOut();
-
-
 	if (isIn)
 	{
 		// FadeIn 할 자리
@@ -54,6 +47,8 @@ void Tile::Update()
 
 void Tile::FadeIn(int pos)
 {
+	currentPos = pos;
+
 	float posX = (pos % 3 - 1) * 75;
 	float posY = -(pos / 3 - 1) * 75;
 	transform->SetPosition(posX, posY);
@@ -66,4 +61,6 @@ void Tile::FadeOut()
 {
 	alpha = renderer->alpha;
 	isOut = true;
+	// FadeOut 하면서 동전도 같이 뒤집기
+	GameManager::GetInstance()->coins[currentPos]->FlipWithDelay(0.3f);
 }

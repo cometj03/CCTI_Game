@@ -1,8 +1,10 @@
 #pragma once
 #include "ScoreText.h"
 #include "Coin.h"
+#include "Tile.h"
 
 #define MAX_TURN 100
+#define TURN_INTERVAL 3
 
 class GameManager
 {
@@ -26,5 +28,8 @@ public:
 
 	std::vector<Coin*> coins;
 	static void PutCoins(std::vector<Coin*> &c);
+
+	Tile* tile;
+	static void PutTile(Tile* t);
 };
 
