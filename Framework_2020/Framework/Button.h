@@ -12,7 +12,12 @@ public:
 	AABBCollider* col;
 	Button(const wchar_t* uri);
 	~Button();
+
+	bool isHover;
+
 	void Update();
-	virtual void OnClick(){}
+	virtual void OnClick() {}
+	virtual void OnMouseHover() {}
+	virtual void OnMouseExit() {}
 };
 

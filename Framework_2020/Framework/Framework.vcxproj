@@ -131,6 +131,7 @@
     <ClCompile Include="AnimationObject.cpp" />
     <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="PlayButton.cpp" />
     <ClCompile Include="BoardScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
@@ -170,6 +171,7 @@
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="TextObject.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="WinApp.cpp" />
@@ -181,6 +183,7 @@
     <ClInclude Include="AnimationObject.h" />
     <ClInclude Include="Arrow.h" />
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="PlayButton.h" />
     <ClInclude Include="BoardScene.h" />
     <ClInclude Include="Bullet.h" />
@@ -221,6 +224,7 @@
     <ClInclude Include="tag.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TextObject.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Vector2.h" />

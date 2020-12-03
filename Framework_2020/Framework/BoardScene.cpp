@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "BoardScene.h"
+#include "GameManager.h"
 
 BoardScene::BoardScene()
 {
@@ -11,8 +12,11 @@ BoardScene::~BoardScene()
 
 void BoardScene::Initialize()
 {
+	GameManager::Init();	// 게임 매니저 초기화
+
+
 	background = Push(new GameObject(L"resources/image/background.png"));
-	board = Push(new GameObject(L"resources/image/board_1.png"));	
+	board = Push(new GameObject(L"resources/image/board_1.png"));
 	
 	/*
 	* 0 1 2

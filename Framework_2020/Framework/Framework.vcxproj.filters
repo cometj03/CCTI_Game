@@ -238,6 +238,12 @@
     <ClCompile Include="PlayButton.cpp">
       <Filter>Project\Main</Filter>
     </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Project</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Project\Board</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinApp.h">
@@ -390,6 +396,12 @@
     </ClInclude>
     <ClInclude Include="PlayButton.h">
       <Filter>Project\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Project</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Project\Board</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

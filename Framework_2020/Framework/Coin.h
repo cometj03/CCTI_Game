@@ -10,11 +10,15 @@ public:
 	~Coin();
 
 	int cur;
+	int flipCount;
+	float takenTime;
+	std::list<float> delayTimes;
 
 	AnimationInfo* animRenderer;
 	std::vector<SheetAnimation*> coinAnimList;
 
 	virtual void Update();
+	void FlipWithDelay(float delayTime);
 	void FlipCoin();
 	int GetCurrentCur();
 };

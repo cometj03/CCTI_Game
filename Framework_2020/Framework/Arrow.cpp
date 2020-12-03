@@ -98,10 +98,9 @@ void Arrow::SwitchCoins()
 	std::list<int> num = CreateList();
 	std::list<int>::iterator num_iter = num.begin();
 
-	// TODO: Â÷·Ê´ë·Î ¹Ù²î°Ô
-	for (auto i = num_iter; i != num.end(); i++) {
-		std::cout << *i << std::endl;
-		coins[*i]->FlipCoin();
+	for (int i = 0; i < num.size(); i++) {
+		coins[*num_iter]->FlipWithDelay(0.1f * i);
+		num_iter++;
 	}
 }
 
