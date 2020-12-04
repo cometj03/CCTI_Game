@@ -11,7 +11,7 @@ public:
 
 	int cur;
 	int flipCount;
-	int isLastCoin;
+	bool isLastCoin;
 	float takenTime;
 	std::list<float> delayTimes;
 

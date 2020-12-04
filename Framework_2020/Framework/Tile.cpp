@@ -62,6 +62,6 @@ void Tile::FadeOut(int pos)
 	// FadeOut 하면서 동전도 같이 뒤집기
 	DEBUG("마지막 코인 ")
 	DEBUG(pos)
-	GameManager::GetInstance()->coins[pos]->isLastCoin++;
+	GameManager::GetInstance()->coins[pos]->SetLastCoin();
 	GameManager::GetInstance()->coins[pos]->FlipWithDelay(0.5f);
 }

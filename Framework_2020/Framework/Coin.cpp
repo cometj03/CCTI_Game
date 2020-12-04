@@ -66,10 +66,12 @@ void Coin::FlipCoin()
 
 	// TODO: 조건부 버그 수정하기 : 힌트랑 같은 줄을 뒤집으면 버그 발생
 	// 내생각엔 isLastCoin 변수가 겹쳐서 생기는 버그 같음
-	if (isLastCoin > 0) {
+	// 리스트로 만들기
+	// bool 로 만들기
+	if (isLastCoin) {
 		std::cout << "체크됨" << std::endl;
 		GameManager::GetInstance()->GameCheck();
-		isLastCoin--;
+		isLastCoin = false;
 	}
 }
 
@@ -80,4 +82,5 @@ int Coin::GetCurrentCur()
 
 void Coin::SetLastCoin()
 {
+	this->isLastCoin = true;
 }
