@@ -15,7 +15,7 @@ public:
 	static void Init();
 	static void AddScore(int d);
 
-	static void GameManagerUpdate();
+	static void TurnUpdate();
 	static void GameCheck();
 
 	static GameManager* GetInstance();

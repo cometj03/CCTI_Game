@@ -47,8 +47,6 @@ void Tile::Update()
 
 void Tile::FadeIn(int pos)
 {
-	currentPos = pos;
-
 	float posX = (pos % 3 - 1) * 75;
 	float posY = -(pos / 3 - 1) * 75;
 	transform->SetPosition(posX, posY);
@@ -57,10 +55,13 @@ void Tile::FadeIn(int pos)
 	isIn = true;
 }
 
-void Tile::FadeOut()
+void Tile::FadeOut(int pos)
 {
 	alpha = renderer->alpha;
 	isOut = true;
 	// FadeOut 하면서 동전도 같이 뒤집기
-	GameManager::GetInstance()->coins[currentPos]->FlipWithDelay(0.3f);
+	DEBUG("마지막 코인 ")
+	DEBUG(pos)
+	GameManager::GetInstance()->coins[pos]->isLastCoin++;
+	GameManager::GetInstance()->coins[pos]->FlipWithDelay(0.5f);
 }

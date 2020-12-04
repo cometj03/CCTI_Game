@@ -53,12 +53,6 @@ void Coin::FlipWithDelay(float delayTime)
 
 void Coin::FlipCoin()
 {
-	if (isLastCoin > 0) {
-		GameManager::GetInstance()->GameManagerUpdate();
-		GameManager::GetInstance()->GameCheck();
-		isLastCoin--;
-	}
-
 	if (cur == 1) 
 	{
 		cur = 0;
@@ -69,9 +63,21 @@ void Coin::FlipCoin()
 		cur = 1;
 		animRenderer->ChangeAnimation(1);
 	}
+
+	// TODO: 조건부 버그 수정하기 : 힌트랑 같은 줄을 뒤집으면 버그 발생
+	// 내생각엔 isLastCoin 변수가 겹쳐서 생기는 버그 같음
+	if (isLastCoin > 0) {
+		std::cout << "체크됨" << std::endl;
+		GameManager::GetInstance()->GameCheck();
+		isLastCoin--;
+	}
 }
 
 int Coin::GetCurrentCur()
 {
 	return cur;
+}
+
+void Coin::SetLastCoin()
+{
 }

@@ -65,5 +65,8 @@
 #define PI 3.141592653589793f
 #define RADTOEULER -180.0f/PI
 
+// Debug
+#define DEBUG(p) { std::cout << p << std::endl; }
+
 //Direct2D에 구현된 구조체를 한번 더 typedef해주었습니다.
 typedef D2D1_POINT_2F Point;

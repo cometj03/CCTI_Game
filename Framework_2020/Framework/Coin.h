@@ -22,5 +22,6 @@ public:
 	void FlipWithDelay(float delayTime);
 	void FlipCoin();
 	int GetCurrentCur();
+	void SetLastCoin();
 };
 

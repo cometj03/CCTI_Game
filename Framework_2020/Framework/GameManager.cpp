@@ -40,10 +40,12 @@ void GameManager::AddScore(int d)
 		Scene::ChangeScene(new OverScene());	// 게임 오버
 }
 
-void GameManager::GameManagerUpdate()
+void GameManager::TurnUpdate()
 {
-	// 턴이 다 끝났을 때, 턴 시작 때 실행
+	// 턴 시작 때 실행
 	GameManager* i = GetInstance();
+
+	i->currentTurn++;
 
 	// 힌트 처리
 	if (i->currentTurn % TURN_INTERVAL == TURN_INTERVAL - 1) {	// 세 턴에 한 번씩 타일 생성
@@ -54,7 +56,7 @@ void GameManager::GameManagerUpdate()
 	}
 	else if (i->currentTurn % TURN_INTERVAL == 0) {	// 그 다음턴일 때 사라짐
 		std::cout << "힌트 끝 : " << i->hintPos << std::endl;
-		i->tile->FadeOut();
+		i->tile->FadeOut(i->hintPos);
 		i->isHintTime = false;
 	}
 }
@@ -66,12 +68,21 @@ void GameManager::GameCheck()
 
 	// 모두 같은 면인지 체크
 	bool flag = true;
-	for (int k = 1; k < i->coins.size() - 1; k++) {
+	for (int k = 0; k < i->coins.size() - 1; k++) {
 		// 지금 것과 다음 것이 같은지 -> 다르면 flag = false
-		if (i->coins[k]->GetCurrentCur() != i->coins[k + 1]->GetCurrentCur()) {
-			flag = false;
-			break;
+		if (flag && i->coins[k]->GetCurrentCur() == i->coins[k + 1]->GetCurrentCur()) {
+			flag = true;
 		}
+		else {
+			flag = false;
+		}
+	}
+
+	// debug
+	for (int j = 0; j < i->coins.size(); j++) {
+		std::cout << i->coins[j]->GetCurrentCur() << " ";
+		if (j % 3 == 2)
+			std::cout << std::endl;
 	}
 
 	if (flag)

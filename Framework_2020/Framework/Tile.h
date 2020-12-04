@@ -9,9 +9,8 @@ public:
 
 	virtual void Update();
 	void FadeIn(int pos);
-	void FadeOut();
+	void FadeOut(int pos);
 
-	int currentPos;
 	bool isIn, isOut;
 	float alpha;
 };

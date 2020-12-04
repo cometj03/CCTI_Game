@@ -33,9 +33,10 @@ void Arrow::Update()
 	Move();
 	ChangeSprite();
 
-	if (InputManager::GetKeyDown(VK_SPACE))
+	if (InputManager::GetKeyDown(VK_SPACE)) {
 		SwitchCoins();
-		
+		GameManager::GetInstance()->TurnUpdate();
+	}
 }
 
 void Arrow::Move()
@@ -104,7 +105,6 @@ void Arrow::ChangeSprite()
 void Arrow::SwitchCoins()
 {
 	GameManager::GetInstance()->AddScore(-5);
-	GameManager::GetInstance()->currentTurn++;	// 턴 하나 증가
 
 	std::list<int> num = CreateList();
 	std::list<int>::iterator num_iter = num.begin();
@@ -116,13 +116,7 @@ void Arrow::SwitchCoins()
 
 	
 	// 게임이 클리어 됐는지 확인해주는 마지막 코인
-	if (GameManager::GetInstance()->isHintTime) {
-		int hintPos = GameManager::GetInstance()->hintPos;
-		coins[num.back()]->isLastCoin++;
-
-		std::cout << "마지막 힌트 코인 " << hintPos << std::endl;
-	}
-	else {
+	if (!GameManager::GetInstance()->isHintTime) {
 		coins[num.back()]->isLastCoin++;
 
 		std::cout << "마지막 코인 " << num.back() << std::endl;
