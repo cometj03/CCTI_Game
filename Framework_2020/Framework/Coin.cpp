@@ -39,6 +39,17 @@ void Coin::Update()
 			this->FlipCoin();
 			takenTime = 0;
 			flipCount--;
+
+			// 조건부 버그 수정하기 : 힌트랑 같은 줄을 뒤집으면 버그 발생
+			// 내생각엔 isLastCoin 변수가 겹쳐서 생기는 버그 같음
+			// 해결 -> 이 코인이 마지막 코인이고 
+			// 마지막으로 돌 때만(delayTimes.size() == 1) 체크하기
+			if (isLastCoin && delayTimes.size() == 1) {
+				DEBUG("체크됨");
+				GameManager::GetInstance()->GameCheck();
+				isLastCoin = false;
+			}
+
 			delayTimes.pop_front();	// 끝나면 하나씩 빼줌
 		}
 	}
@@ -62,16 +73,6 @@ void Coin::FlipCoin()
 	{
 		cur = 1;
 		animRenderer->ChangeAnimation(1);
-	}
-
-	// TODO: 조건부 버그 수정하기 : 힌트랑 같은 줄을 뒤집으면 버그 발생
-	// 내생각엔 isLastCoin 변수가 겹쳐서 생기는 버그 같음
-	// 리스트로 만들기
-	// bool 로 만들기
-	if (isLastCoin) {
-		std::cout << "체크됨" << std::endl;
-		GameManager::GetInstance()->GameCheck();
-		isLastCoin = false;
 	}
 }
 

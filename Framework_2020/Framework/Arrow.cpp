@@ -30,6 +30,8 @@ Arrow::~Arrow()
 
 void Arrow::Update()
 {
+	GameManager::GetInstance()->Update();
+
 	Move();
 	ChangeSprite();
 

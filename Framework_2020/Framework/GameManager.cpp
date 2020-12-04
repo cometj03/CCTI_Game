@@ -2,6 +2,7 @@
 #include "GameManager.h"
 #include "OverScene.h"
 #include "Random.h"
+#include "TimeManager.h"
 
 GameManager::GameManager()
 {
@@ -19,6 +20,22 @@ GameManager* GameManager::GetInstance()
 	return &gmr;
 }
 
+void GameManager::Update()
+{
+	GameManager* i = GetInstance();
+	
+	// 클리어시 딜레이 0.5초
+	if (i->isGameClear)
+	{
+		if (i->delayTime < 0.5f)
+			i->delayTime += TimeManager::GetDeltaTime();
+		else {
+			DEBUG("Clear!")
+			Scene::ChangeScene(new OverScene(i->score));
+		}
+	}
+}
+
 void GameManager::Init()
 {
 	GameManager* i = GetInstance();
@@ -27,6 +44,9 @@ void GameManager::Init()
 	i->maxTurn = MAX_TURN;
 	i->score = MAX_TURN;
 	i->isHintTime = false;
+
+	i->delayTime = 0;
+	i->isGameClear = false;
 }
 
 void GameManager::AddScore(int d)
@@ -67,14 +87,14 @@ void GameManager::GameCheck()
 	GameManager* i = GetInstance();
 
 	// 모두 같은 면인지 체크
-	bool flag = true;
+	i->isGameClear = true;
 	for (int k = 0; k < i->coins.size() - 1; k++) {
 		// 지금 것과 다음 것이 같은지 -> 다르면 flag = false
-		if (flag && i->coins[k]->GetCurrentCur() == i->coins[k + 1]->GetCurrentCur()) {
-			flag = true;
+		if (i->isGameClear && i->coins[k]->GetCurrentCur() == i->coins[k + 1]->GetCurrentCur()) {
+			i->isGameClear = true;
 		}
 		else {
-			flag = false;
+			i->isGameClear = false;
 		}
 	}
 
@@ -85,8 +105,8 @@ void GameManager::GameCheck()
 			std::cout << std::endl;
 	}
 
-	if (flag)
-		Scene::ChangeScene(new OverScene(i->score));	// 클리어
+	//if (flag)
+		//Scene::ChangeScene(new OverScene(i->score));	// 클리어
 }
 
 void GameManager::PutScoreText(ScoreText* st)

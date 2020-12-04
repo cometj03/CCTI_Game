@@ -45,8 +45,8 @@ void BoardScene::Initialize()
 		coins[rr]->FlipWithDelay(0.8f);
 
 	// debug
-	//coins[1]->FlipWithDelay(0.4f);
-	//coins[2]->FlipWithDelay(0.8f);
+	// coins[1]->FlipWithDelay(0.4f);
+	// coins[2]->FlipWithDelay(0.8f);
 	GameManager::GetInstance()->PutCoins(coins);
 
 	arrow = new Arrow(new AnimationInfo);
